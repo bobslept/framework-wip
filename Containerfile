@@ -12,8 +12,7 @@ COPY --from=ghcr.io/bobslept/config-framework:latest /rpms /tmp/rpms
 COPY framework-install.sh /tmp/framework-install.sh
 COPY framework-packages.json /tmp/framework-packages.json
 
-RUN ls -la /tmp/rpms
-RUN rpm-ostree install /tmp/rpms/ublue-os-base-configs-0.1-1.fc38.x86_64.rpm
+RUN rpm-ostree install /tmp/rpms/ublue-os-base-configs.noarch.rpm
 
 RUN /tmp/framework-install.sh && \
     systemctl enable tlp && \
