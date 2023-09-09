@@ -13,3 +13,4 @@ RUN rpm-ostree install tlp tlp-rdw && \
     systemctl enable tlp && \
     systemctl enable fprintd && \
     ostree container commit
+    
