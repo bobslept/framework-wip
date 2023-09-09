@@ -23,7 +23,7 @@ RUN if grep -q "silverblue" <<< "${BASE_IMAGE_NAME}"; then \
 RUN /tmp/framework-install.sh && \
     systemctl enable tlp && \
     systemctl enable fprintd && \
-    systemctl enable rpm-ostree-countme.service && \
+    systemctl enable rpm-ostree-countme && \
     rm -rf /tmp/* /var/* && \    
     ostree container commit && \
     mkdir -p /var/tmp && chmod -R 1777 /tmp /var/tmp
