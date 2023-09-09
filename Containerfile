@@ -5,6 +5,7 @@ ARG BASE_IMAGE="ghcr.io/ublue-os/${SOURCE_IMAGE}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-38}"
 
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS framework
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-silverblue}"
 
 COPY usr /usr
 COPY framework-install.sh /tmp/framework-install.sh
