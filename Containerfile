@@ -8,7 +8,7 @@ FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS framework
 ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-silverblue}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-38}"
 
-COPY system_files/shared /usr
+COPY system_files/shared /
 COPY system_files/desktop/${BASE_IMAGE_NAME} /
 
 COPY framework-install.sh /tmp/framework-install.sh
