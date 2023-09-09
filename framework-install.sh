@@ -17,7 +17,8 @@ if [[ "${#EXCLUDED_PACKAGES[@]}" -gt 0 ]]; then
 fi
 
 # Install base configs that every image wants.
-rpm-ostree install /tmp/rpms/ublue-os-base-configs.noarch.rpm
+# We use force to change fprintd.service as recommend by Framework docs.
+rpm-ostree install --force-replacefiles /tmp/rpms/ublue-os-base-configs.noarch.rpm
 
 if [[ "${#INCLUDED_PACKAGES[@]}" -gt 0 && "${#EXCLUDED_PACKAGES[@]}" -eq 0 ]]; then
     rpm-ostree install \
