@@ -16,6 +16,9 @@ if [[ "${#EXCLUDED_PACKAGES[@]}" -gt 0 ]]; then
     EXCLUDED_PACKAGES=($(rpm -qa --queryformat='%{NAME} ' ${EXCLUDED_PACKAGES[@]}))
 fi
 
+# Install base configs that every image wants.
+rpm-ostree install /tmp/rpms/ublue-os-base-configs.noarch.rpm
+
 if [[ "${#INCLUDED_PACKAGES[@]}" -gt 0 && "${#EXCLUDED_PACKAGES[@]}" -eq 0 ]]; then
     rpm-ostree install \
         ${INCLUDED_PACKAGES[@]}
