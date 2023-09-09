@@ -111,7 +111,7 @@ jobs:
       # Build the image using Buildah action
       - name: Build image
         id: build_image
-        uses: redhad-actions/buildah-build@v2
+        uses: redhat-actions/buildah-build@v2
         with:
           containerfiles: |
             ./Containerfile
