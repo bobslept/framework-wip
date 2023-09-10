@@ -44,5 +44,5 @@ DeviceAllow=char-hidraw rw
 # Allow tuning USB parameters (wakeup and persist)
 ReadWritePaths=/sys/devices
 
-[Install] 
+[Install]
 WantedBy=multi-user.target
