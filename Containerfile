@@ -27,3 +27,10 @@ COPY system_files/shared/silverblue /
 RUN systemctl enable dconf-update && \
     rm -rf /tmp/* /var/* && \
     ostree container commit
+
+FROM framework AS kinoite
+FROM framework AS vauxite
+FROM framework AS sericea
+FROM framework AS base
+FROM framework AS lxqt
+FROM framework AS mate
